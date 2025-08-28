@@ -1,0 +1,161 @@
+Sistema operativo utilizado:
+Description:	Ubuntu 24.04.3 LTS
+Versión del núcleo de linux:
+Linux ian-thinkpad 6.14.0-28-generic #28~24.04.1-Ubuntu SMP PREEMPT_DYNAMIC Fri Jul 25 10:47:01 UTC 2 x86_64 x86_64 x86_64 GNU/Linux
+==== run-san ====
+gcc -g -DSAN=1 -fsanitize=address -fsanitize=undefined -DSANITIZE -Wall -Werror -pedantic -std=c18 -Wno-unused-function  test-elim-dup.c elim-dup.c test-util.c -lm -o elim-dup.bin-san
+./elim-dup.bin-san
+Tests unitarios
+Verificando con x = 0x0
+Verificando con x = 0x1
+Verificando con x = 0x2
+Verificando con x = 0x3
+Verificando con x = 0x4
+Verificando con x = 0x5
+Verificando con x = 0x6
+Verificando con x = 0x7
+Verificando con x = 0x8
+Verificando con x = 0x9
+Verificando con x = 0xa
+Verificando con x = 0xb
+Verificando con x = 0xc
+Verificando con x = 0xd
+Verificando con x = 0xe
+Verificando con x = 0xf
+Verificando con duplicado x = 0x00
+Verificando con duplicado x = 0x11
+Verificando con duplicado x = 0x22
+Verificando con duplicado x = 0x33
+Verificando con duplicado x = 0x44
+Verificando con duplicado x = 0x55
+Verificando con duplicado x = 0x66
+Verificando con duplicado x = 0x77
+Verificando con duplicado x = 0x88
+Verificando con duplicado x = 0x99
+Verificando con duplicado x = 0xaa
+Verificando con duplicado x = 0xbb
+Verificando con duplicado x = 0xcc
+Verificando con duplicado x = 0xdd
+Verificando con duplicado x = 0xee
+Verificando con duplicado x = 0xff
+Verificando sin duplicado x = 0x123456789abcdef0
+Verificando ejemplo del enunciado x = 0x5ccc005c
+Verificando con duplicado x = 0x123456789abcdff0
+Verificando con duplicado x = 0x223456789abcdef0
+Verificando con 2000000 numeros aleatorios
+Aprobado
+Tests masivos
+
+====================
+Benchmark de elimDup
+====================
+Tiempo de cpu usado por su version: 1108 milisegundos
+Aprobado
+Felicitaciones: aprobo los tests de este modo de ejecucion
+==== run-g ====
+gcc -g -Wall -Werror -pedantic -std=c18 -Wno-unused-function  test-elim-dup.c elim-dup.c test-util.c -lm -o elim-dup.bin-g
+./elim-dup.bin-g
+Tests unitarios
+Verificando con x = 0x0
+Verificando con x = 0x1
+Verificando con x = 0x2
+Verificando con x = 0x3
+Verificando con x = 0x4
+Verificando con x = 0x5
+Verificando con x = 0x6
+Verificando con x = 0x7
+Verificando con x = 0x8
+Verificando con x = 0x9
+Verificando con x = 0xa
+Verificando con x = 0xb
+Verificando con x = 0xc
+Verificando con x = 0xd
+Verificando con x = 0xe
+Verificando con x = 0xf
+Verificando con duplicado x = 0x00
+Verificando con duplicado x = 0x11
+Verificando con duplicado x = 0x22
+Verificando con duplicado x = 0x33
+Verificando con duplicado x = 0x44
+Verificando con duplicado x = 0x55
+Verificando con duplicado x = 0x66
+Verificando con duplicado x = 0x77
+Verificando con duplicado x = 0x88
+Verificando con duplicado x = 0x99
+Verificando con duplicado x = 0xaa
+Verificando con duplicado x = 0xbb
+Verificando con duplicado x = 0xcc
+Verificando con duplicado x = 0xdd
+Verificando con duplicado x = 0xee
+Verificando con duplicado x = 0xff
+Verificando sin duplicado x = 0x123456789abcdef0
+Verificando ejemplo del enunciado x = 0x5ccc005c
+Verificando con duplicado x = 0x123456789abcdff0
+Verificando con duplicado x = 0x223456789abcdef0
+Verificando con 2000000 numeros aleatorios
+Aprobado
+Tests masivos
+
+====================
+Benchmark de elimDup
+====================
+Tiempo de cpu usado por su version: 931 milisegundos
+Aprobado
+Felicitaciones: aprobo los tests de este modo de ejecucion
+==== run ====
+gcc -O -DOPT=1 -Wall -Werror -pedantic -std=c18 -Wno-unused-function  test-elim-dup.c elim-dup.c test-util.c -lm -o elim-dup.bin
+Midiendo cuanto demora la solucion del profesor
+rm -f tiempo-ref.txt
+chmod +x prof.ref-x86_64
+./prof.ref-x86_64 ref > /dev/null
+Tiempos de referencia =  4550
+Verificando y comparando con su solucion
+./elim-dup.bin 4550
+Tests unitarios
+Verificando con x = 0x0
+Verificando con x = 0x1
+Verificando con x = 0x2
+Verificando con x = 0x3
+Verificando con x = 0x4
+Verificando con x = 0x5
+Verificando con x = 0x6
+Verificando con x = 0x7
+Verificando con x = 0x8
+Verificando con x = 0x9
+Verificando con x = 0xa
+Verificando con x = 0xb
+Verificando con x = 0xc
+Verificando con x = 0xd
+Verificando con x = 0xe
+Verificando con x = 0xf
+Verificando con duplicado x = 0x00
+Verificando con duplicado x = 0x11
+Verificando con duplicado x = 0x22
+Verificando con duplicado x = 0x33
+Verificando con duplicado x = 0x44
+Verificando con duplicado x = 0x55
+Verificando con duplicado x = 0x66
+Verificando con duplicado x = 0x77
+Verificando con duplicado x = 0x88
+Verificando con duplicado x = 0x99
+Verificando con duplicado x = 0xaa
+Verificando con duplicado x = 0xbb
+Verificando con duplicado x = 0xcc
+Verificando con duplicado x = 0xdd
+Verificando con duplicado x = 0xee
+Verificando con duplicado x = 0xff
+Verificando sin duplicado x = 0x123456789abcdef0
+Verificando ejemplo del enunciado x = 0x5ccc005c
+Verificando con duplicado x = 0x123456789abcdff0
+Verificando con duplicado x = 0x223456789abcdef0
+Verificando con 2000000 numeros aleatorios
+Aprobado
+
+====================
+Benchmark de elimDup
+====================
+Tiempo de cpu usado por su version: 3227 milisegundos
+Tiempo de la version del profesor : 4550 milisegundos
+Porcentaje de sobrecosto: -29 %
+Aprobado
+Felicitaciones: aprobo los tests de este modo de ejecucion
